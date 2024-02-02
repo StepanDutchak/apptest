@@ -43,10 +43,12 @@ const MainCardPost = ({itemCardData}: IMainCardPost) => {
   };
 
   const handleSave = () => {
-    dispatch(
-      updatePostTitleById({postId: itemCardData.id, newTitle: postTitle}),
-    );
-    setExpanded(false);
+    if (postTitle) {
+      dispatch(
+        updatePostTitleById({postId: itemCardData.id, newTitle: postTitle}),
+      );
+      setExpanded(false);
+    }
   };
 
   const handleUpdateCard = () => {

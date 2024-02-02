@@ -41,11 +41,9 @@ const HomeScreen = ({}: IHomeScreen) => {
 
   const handleCreatePost = useCallback(async () => {
     try {
-      const res = await createPost(combinePostData);
+      await createPost(combinePostData);
 
       dispatch(setPost([...postList, combinePostData]));
-
-      console.log(res);
     } catch (error) {
       console.error('Error creating post:', error);
     }
